@@ -1,65 +1,133 @@
-@extends('app')
+<section class="container register-wrap main-wrap">
+    <div class="div-line"></div> {{--中间的分割线--}}
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="section-title">
+                <h4 class="title">用户注册</h4>
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 left-wrap">
+            <form id="form-register"
+                    class="form-horizontal"
+                    role="form"
+                    method="POST"
+                    action="{{ url('/auth/register') }}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
+                <div class="form-group form-group-lg">
+                    <label class="col-xs-4 control-label"
+                            for="r-email"> 常用邮箱</label>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+                    <div class="col-xs-7">
+                        <div class="input-group">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                            </div>
+                            <input type="email"
+                                    class="form-control input-lg"
+                                    name="email"
+                                    id="r-email"
+                                    value="{{ old('email') }}"
+                                    placeholder="输入邮箱">
+                        </div>
+                    </div>
+                </div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
+                <div class="form-group form-group-lg">
+                    <label class="col-xs-4 control-label"
+                            for="r-name"> 昵称</label>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Register
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-@endsection
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </div>
+                            <input type="text"
+                                    class="form-control input-lg"
+                                    name="name"
+                                    id="r-name"
+                                    value="{{ old('name') }}"
+                                    placeholder="输入昵称">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label class="col-xs-4 control-label"
+                            for="r-password"> 密码</label>
+
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                            </div>
+                            <input type="password"
+                                    class="form-control input-lg"
+                                    name="password"
+                                    id="r-password"
+                                    placeholder="输入密码">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label class="col-xs-4 control-label"
+                            for="r-re-password"> 确认密码</label>
+
+                    <div class="col-xs-7">
+                        <div class="input-group">
+                            <div class="input-group-addon ">
+                                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                            </div>
+                            <input type="password"
+                                    class="form-control input-lg"
+                                    name="password_confirmation"
+                                    id="r-re-password"
+                                    placeholder="再次输入密码">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-group-lg">
+                    <label class="col-xs-4 control-label"
+                            for="r-captcha"> 验证码</label>
+
+                    <div class="col-xs-3">
+                        <input type="text"
+                                class="form-control input-lg input-fix"
+                                name="captcha"
+                                id="r-captcha"
+                                placeholder="验证码">
+                    </div>
+                    <div class="col-xs-4">
+                        <img class="img-responsive img-rounded form-control input-lg captcha"
+                                src="{{$captcha::src()}}"
+                                onclick="this.src = this.src.split('?')[0]+ '?' + Math.random()" title="点击刷新"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-7 col-xs-offset-4">
+                        <button id="submit-register" type="submit" class="btn btn-primary btn-lg">
+                            完成注册
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-7 col-xs-offset-4">
+                        已有账号? <a href="{{url('auth/login')}}">立即登录>></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-6 right-wrap">
+            <div class="right-img"></div>
+        </div>
+    </div>
+</section>
