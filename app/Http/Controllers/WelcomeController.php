@@ -30,6 +30,9 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+
+		dump(env('APP_ENV'));
+		dump(env('APP_DEBUG'));
 		return view('welcome');
 	}
 
