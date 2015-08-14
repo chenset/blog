@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>博客后台管理</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!--[if lt IE 9]>
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <script src="{{asset('/js/html5shiv.min.js')}}"></script>

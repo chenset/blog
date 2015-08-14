@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpFoundation\File\File;
 
 class ArticleController extends Controller
 {
