@@ -37,7 +37,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="">
-                        <a href="{{route('index')}}"><i class="fa fa-circle-o"></i> 文章</a>
+                        <a href="{{route('admin.article.index')}}"><i class="fa fa-circle-o"></i> 文章</a>
                     </li>
                     <li><a href="#"><i class="fa fa-circle-o"></i> 单页</a></li>
                 </ul>
