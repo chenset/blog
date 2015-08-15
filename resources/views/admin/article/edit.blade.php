@@ -97,6 +97,7 @@
                                         <div class="form-group">
                                             <b>是否发布</b>
                                         </div>
+                                        {{dump($article)}}
                                         <label style="margin-right: 20px;">
                                             <input type="radio"
                                                     name="display"
