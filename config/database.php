@@ -118,7 +118,7 @@ return [
         'default' => [
             'host' => 'redis.duapp.com',
             'port' => '80',
-//            'alias'=> 'UBWtJlSywukwTJfrYVRR',
+            'alias'=> 'UBWtJlSywukwTJfrYVRR',
             'username' => 'bf34ffd318b7411bbc815782e87e33ef',
             'password' => '65b1f602f112428699f98e400c7aa08b',
             'database' => 'UBWtJlSywukwTJfrYVRR',
