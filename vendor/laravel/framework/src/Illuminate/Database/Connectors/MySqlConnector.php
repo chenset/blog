@@ -24,12 +24,13 @@ class MySqlConnector extends Connector implements ConnectorInterface {
 			$connection->exec("use `{$config['database']}`;");
 		}
 
-		$collation = $config['collation'];
+		//这里被注释掉了, 因为这里与BAE的连接字符集有冲突
+//		$collation = $config['collation'];
 
 		// Next we will set the "names" and "collation" on the clients connections so
 		// a correct character set will be used by this client. The collation also
 		// is set on the server but needs to be set here on this client objects.
-		$charset = $config['charset'];
+//		$charset = $config['charset'];
 
 //		$names = "set names '$charset'";
 //			( ! is_null($collation) ? " collate '$collation'" : '');
