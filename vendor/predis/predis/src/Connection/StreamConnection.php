@@ -96,10 +96,10 @@ class StreamConnection extends AbstractConnection
         if (!$resource) {
             $this->onConnectionError(trim($errstr), $errno);
         }
-        $parameters->read_write_timeout = 0;
         if (isset($parameters->read_write_timeout)) {
             $rwtimeout = (float) $parameters->read_write_timeout;
             $rwtimeout = $rwtimeout > 0 ? $rwtimeout : -1;
+               $rwtimeout= 0;
             $timeoutSeconds = floor($rwtimeout);
             $timeoutUSeconds = ($rwtimeout - $timeoutSeconds) * 1000000;
             stream_set_timeout($resource, $timeoutSeconds, $timeoutUSeconds);
