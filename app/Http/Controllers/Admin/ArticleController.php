@@ -105,7 +105,6 @@ class ArticleController extends Controller
         $data['release_time'] = strtotime($data['release_time']);
         $data['order'] = (int)$data['order'];
         $article = $this->articleM->findOrFail($id);
-        DB::statement('SET NAMES utf8');
         $article->update($data);
 
         return response(['msg' => '保存成功!', 'url' => route('admin.article.edit', $article['id'])]);
