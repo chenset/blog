@@ -81,7 +81,7 @@ class ArticleController extends Controller
 
         $article = $this->articleM->create($data);
 
-        return response(['msg' => '保存成功!', 'url' => route('admin/article/edit', $article['id'])]);
+        return response(['msg' => '保存成功!', 'url' => route('admin.article.edit', $article['id'])]);
     }
 
     public function edit($id)
@@ -106,6 +106,6 @@ class ArticleController extends Controller
         $article = $this->articleM->findOrFail($id);
         $article->update($data);
 
-        return response(['msg' => '保存成功!', 'url' => route('admin/article/edit', $article['id'])]);
+        return response(['msg' => '保存成功!', 'url' => route('admin.article.edit', $article['id'])]);
     }
 }
