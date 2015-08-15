@@ -98,6 +98,15 @@
                                             <b>是否发布</b>
                                         </div>
                                         {{dump($article)}}
+
+                                        @if(!isset($article['display']) || $article['display']===1)
+                                            11111111
+                                        @endif
+
+                                        @if(isset($article['display']) && $article['display']===0)
+                                            0000000000
+                                        @endif
+
                                         <label style="margin-right: 20px;">
                                             <input type="radio"
                                                     name="display"
