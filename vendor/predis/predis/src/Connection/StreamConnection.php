@@ -33,8 +33,6 @@ use Predis\Response\Status as StatusResponse;
  */
 class StreamConnection extends AbstractConnection
 {
-
-protected $read_write_timeout = 0;
     /**
      * Disconnects from the server and destroys the underlying resource when the
      * garbage collector kicks in only if the connection has not been marked as
@@ -98,7 +96,7 @@ protected $read_write_timeout = 0;
         if (!$resource) {
             $this->onConnectionError(trim($errstr), $errno);
         }
-
+        $parameters->read_write_timeout = 0;
         if (isset($parameters->read_write_timeout)) {
             $rwtimeout = (float) $parameters->read_write_timeout;
             $rwtimeout = $rwtimeout > 0 ? $rwtimeout : -1;
