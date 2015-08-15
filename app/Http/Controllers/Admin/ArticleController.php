@@ -103,7 +103,7 @@ class ArticleController extends Controller
         $data = $this->request->all();
         $data['release_time'] = strtotime($data['release_time']);
         $data['order'] = (int)$data['order'];
-
+        f($data);
         $article = $this->articleM->findOrFail($id);
         $article->update($data);
 
