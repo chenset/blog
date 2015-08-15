@@ -60,7 +60,7 @@ return [
 			'password'  => env('DB_PASSWORD', ''),
 			'port'      => env('DB_PORT',3306),
 			'charset'   => 'UTF8',
-			'collation' => 'utf8_unicode_ci',
+			'collation' => 'utf8_general_ci',
 			'prefix'    => '',
 			'strict'    => false,
 		],
