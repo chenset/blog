@@ -119,7 +119,7 @@ return [
             'host' => 'redis.duapp.com',
             'port' => '80',
             'database' => 'UBWtJlSywukwTJfrYVRR',
-            
+
             'username' => 'bf34ffd318b7411bbc815782e87e33ef',
             'password' => '65b1f602f112428699f98e400c7aa08b',
             'read_write_timeout' => -1,
