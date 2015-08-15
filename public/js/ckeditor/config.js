@@ -10,4 +10,6 @@ CKEDITOR.editorConfig = function (config) {
     config.image_previewText = ' ';
     config.filebrowserImageUploadUrl = "/admin/article/image/upload";
     //config.filebrowserBrowseUrl = "/admin/article/image/upload";
+
+    config.height = 900;
 };
