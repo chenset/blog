@@ -33,7 +33,7 @@ class MySqlConnector extends Connector implements ConnectorInterface {
 
 		$names = "set names '$charset'".
 			( ! is_null($collation) ? " collate '$collation'" : '');
-
+dump($names);
 		$connection->prepare($names)->execute();
 
 		// Next, we will check to see if a timezone has been specified in this config
