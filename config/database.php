@@ -116,20 +116,24 @@ return [
         'cluster' => false,
 
         'default' => [
-            'host' => 'redis.duapp.com',
-            'port' => '80',
-            'database' => 'UBWtJlSywukwTJfrYVRR',
+            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 0,
 
-            'username' => 'bf34ffd318b7411bbc815782e87e33ef',
-            'password' => '65b1f602f112428699f98e400c7aa08b',
-            'read_write_timeout' => -1,
-            'alias' => 'UBWtJlSywukwTJfrYVRR',
-            'options ' => [
-                'username' => 'bf34ffd318b7411bbc815782e87e33ef',
-                'password' => '65b1f602f112428699f98e400c7aa08b',
-                'read_write_timeout' => -1,
-                'alias' => 'UBWtJlSywukwTJfrYVRR',
-            ],
+//            'host' => 'redis.duapp.com',
+//            'port' => '80',
+//            'database' => 0,
+//            'database' => 'UBWtJlSywukwTJfrYVRR',
+//            'username' => 'bf34ffd318b7411bbc815782e87e33ef',
+//            'password' => '65b1f602f112428699f98e400c7aa08b',
+//            'read_write_timeout' => -1,
+//            'alias' => 'UBWtJlSywukwTJfrYVRR',
+//            'options ' => [
+//                'username' => 'bf34ffd318b7411bbc815782e87e33ef',
+//                'password' => '65b1f602f112428699f98e400c7aa08b',
+//                'read_write_timeout' => -1,
+//                'alias' => 'UBWtJlSywukwTJfrYVRR',
+//            ],
         ],
     ],
 
