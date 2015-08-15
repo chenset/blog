@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -104,6 +105,7 @@ class ArticleController extends Controller
         $data['release_time'] = strtotime($data['release_time']);
         $data['order'] = (int)$data['order'];
         $article = $this->articleM->findOrFail($id);
+        DB::statement('SET NAMES utf8');
         $article->update($data);
 
         return response(['msg' => '保存成功!', 'url' => route('admin.article.edit', $article['id'])]);
