@@ -10,43 +10,24 @@ function f($value)
     }
 }
 
+
 /**
- * 获取指定字段枚举值的列表
- * 有30天的缓存, 为空时不缓存
- * @param $table
- * @param $column
- * @return array
+ * 控制nav的激活状态
+ * @param $route
+ * @return bool
  */
-function get_enum_values($table, $column)
+function nav_active($route)
 {
-    return \Illuminate\Support\Facades\Cache::remember(__FUNCTION__ . $table . $column, 24 * 60 * 30, function () use ($table, $column) {
+    static $routeInstance = null;//避免多次实例化
+    if (!isset($routeInstance)) {
+        $routeInstance = \Illuminate\Support\Facades\App::make('router');
+    }
 
-        //避免table参数 sql注入
-        $validator = \Illuminate\Support\Facades\Validator::make(['table' => $table], ['table' => 'alpha_dash']);
-        if ($validator->fails()) {
-            return [];
-        }
+    if ($routeInstance->currentRouteName() === $route) {
+        return true;
+    }
 
-        //重新从数据库获取数据
-        $res = \Illuminate\Support\Facades\DB::select("SHOW COLUMNS FROM {$table} where Field = ?;", [$column]);
-        if (count($res) === 0) {
-            return [];
-        }
-        if (empty($res[0]['Type'])) {
-            return [];
-        }
-        if (!starts_with($res[0]['Type'], "enum('")) {
-            return [];
-        }
-
-        $enumStr = substr($res[0]['Type'], 6);
-
-        $enumStr = substr($enumStr, 0, -2);
-
-        $enumArr = explode("','", $enumStr);
-
-        return $enumArr;
-    });
+    return false;
 }
 
 function read_file($path)

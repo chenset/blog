@@ -78,7 +78,8 @@
                                         <a href="{{route('admin.article.edit',$item['id'])}}"
                                                 class="btn btn-xs btn-default"><i class="fa fa-fw fa-pencil"
                                                     title="编辑"></i></a>
-                                        <a href="{{route('article.show',$item['id'])}}"
+
+                                        <a href="{{route(strtolower(config('blog.article_type')[$item['type']]).'.show',$item['id'])}}"
                                                 class="btn btn-xs btn-default"><i class="fa fa-fw fa-link"
                                                     title="预览"></i></a>
                                     </td>
@@ -90,11 +91,11 @@
                     {{--<div class="box-footer clearfix">--}}
                     {{--</div>--}}
                     {{--<form method="post"--}}
-                            {{--action="http://127.0.0.1:81/admin/article"--}}
-                            {{--accept-charset="utf-8"--}}
-                            {{--id="hidden-delete-form">--}}
-                        {{--<input name="_method" type="hidden" value="delete">--}}
-                        {{--<input type="hidden" name="_token" value="oDmG9Th2kP36BHAp0kfXMrK2cxgES6NR9auaAcQc">--}}
+                    {{--action="http://127.0.0.1:81/admin/article"--}}
+                    {{--accept-charset="utf-8"--}}
+                    {{--id="hidden-delete-form">--}}
+                    {{--<input name="_method" type="hidden" value="delete">--}}
+                    {{--<input type="hidden" name="_token" value="oDmG9Th2kP36BHAp0kfXMrK2cxgES6NR9auaAcQc">--}}
                     {{--</form>--}}
                 </div>
             </div>

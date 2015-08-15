@@ -24,6 +24,26 @@ class ArticleController extends Controller
         return view('article/show', compact('article'));
     }
 
+    public function getCode($id)
+    {
+        return $this->show($id);
+    }
+
+    public function getNote($id)
+    {
+        return $this->show($id);
+    }
+
+    public function getCodeIndex()
+    {
+        return view('article/index');
+    }
+
+    public function getNoteIndex()
+    {
+        return view('article/index');
+    }
+
     public function getNotice()
     {
         $articles = $this->articleM->where('type', 1)->orderBy('order', 'desc')->orderBy('release_time', 'desc')->orderBy('created_at', 'desc')->paginate(10);
