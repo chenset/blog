@@ -100,7 +100,9 @@
                                         <label style="margin-right: 20px;">
                                             <input type="radio"
                                                     name="display"
-                                                    {{(!isset($article['display']) || $article['display']===1)?' checked ':''}}
+                                                    @if(!isset($article['display']) || $article['display']===1)
+                                                    checked
+                                                    @endif
                                                     class="icheck"
                                                     value="1"/> 发布
                                         </label>
@@ -109,7 +111,9 @@
                                             <input type="radio"
                                                     name="display"
                                                     class="icheck"
-                                                    {{(isset($article['display']) && $article['display']===0)?' checked ':''}}
+                                                    @if(isset($article['display']) && $article['display']===0)
+                                                    checked
+                                                    @endif
                                                     value="0"/> 隐藏
                                         </label>
                                     </div>
