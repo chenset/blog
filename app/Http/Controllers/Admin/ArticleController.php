@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Qiniu\Storage\UploadManager;
+use Qiniu\Auth as QiniuAuth;
 
 class ArticleController extends Controller
 {
@@ -43,14 +45,27 @@ class ArticleController extends Controller
         $uploadPath = $this->imageUploadPath . $datePath;
         create_dir($uploadPath);
 
-        $path = $file->move($uploadPath, $newName);
 
-        if (!$path) {
-            return response('移动文件失败!', 500);
-        }
+        $upManager = new UploadManager();
+        $auth = new QiniuAuth('hXyTlInRrfd1NGCttU2yF3OsliR2YeGF_yVkebYd', 'HA2WRXWzlQ081ZQ3W6kxHTUCBdD8bUDCzGnqex_S');
+        $token = $auth->uploadToken('flysay');
+        list($ret, $error) = $upManager->put($token, $newName, file_get_contents((string)$file), null, $file->getMimeType());
 
+//
+//        $path = $file->move($uploadPath, $newName);
+//
+//        if (!$path) {
+//            return response('移动文件失败!', 500);
+//        }
+
+//        return response('<script>
+//                window.parent.CKEDITOR.tools.callFunction(' . $this->request['CKEditorFuncNum'] . ',"' . route('article.image.upload.get', [$datePath, $newName]) . '","");
+//                </script>');
+//
+
+        $qiniuCdnRootUrl = 'http://7xl4o3.com1.z0.glb.clouddn.com';
         return response('<script>
-                window.parent.CKEDITOR.tools.callFunction(' . $this->request['CKEditorFuncNum'] . ',"' . route('article.image.upload.get', [$datePath, $newName]) . '","");
+                window.parent.CKEDITOR.tools.callFunction(' . $this->request['CKEditorFuncNum'] . ',"' . $qiniuCdnRootUrl . '/' . $newName . '","");
                 </script>');
     }
 
