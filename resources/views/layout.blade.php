@@ -13,11 +13,27 @@
         {{-- 按需载入css, 这个section会被每个子视图重写 --}}
     @show
 
-    <!--[if lt IE 9]>
+     <!--[if lt IE 9]>
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <script src="{{asset('/js/html5shiv.min.js')}}"></script>
     <![endif]-->
+
     <script src="{{asset('/js/jquery.min.js')}}"></script>
+{{--    <script src="{{asset('/js/require.js')}}"></script>--}}
+    {{--<script>--}}
+        {{--requirejs.config({--}}
+            {{--baseUrl: 'js',--}}
+            {{--paths: {--}}
+                {{--jquery: 'jquery.min'--}}
+            {{--},--}}
+            {{--packages: [{--}}
+                {{--name: "codemirror",--}}
+                {{--location: "/js",--}}
+                {{--main: "codemirror"--}}
+            {{--}]--}}
+        {{--});--}}
+    {{--</script>--}}
+    {{--<script src="{{asset('/js/jquery.min.js')}}"></script>--}}
 
     <style type="text/css">
         {{--footer置底--}}
@@ -120,6 +136,8 @@
         </nav>
     </div>
 </div>
+
+
 <script src="{{asset('/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('/js/codemirror.js')}}"></script>
 <script src="{{asset('/js/codemirror-active-line.js')}}"></script>
