@@ -58,7 +58,7 @@ $(function () {
                     lineWrapping: true,
                     readOnly: false,
                     styleActiveLine: true,
-                    mode:"javascript",
+                    mode: "javascript",
                     autofocus: true
                 });
 
@@ -90,12 +90,4 @@ $(function () {
                 </section>
             @endforeach
         </div>
-
-
-        <div class="wave">
-            <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
-                <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none; fill:red;"></path>
-            </svg>
-        </div>
-
 @stop
