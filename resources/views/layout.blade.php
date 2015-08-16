@@ -69,6 +69,7 @@
     </div>
     <![endif]-->
 
+
     <nav class="navbar navbar-default index-navbar">
         <div class="container">
             <div class="navbar-header">
@@ -88,9 +89,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="{{nav_active('index')?' active ':''}}" href="{{route('index')}}">HOME</a></li>
-                    <li><a class="{{nav_active('code.index')?' active ':''}}" href="{{route('code.index')}}">CODE</a>
+                    <li><a class="{{nav_active('code.index')?' active ':''}}"
+                                href="{{route('code.index')}}">CODE</a>
                     </li>
-                    <li><a class="{{nav_active('note.index')?' active ':''}}" href="{{route('note.index')}}">NOTE</a>
+                    <li><a class="{{nav_active('note.index')?' active ':''}}"
+                                href="{{route('note.index')}}">NOTE</a>
                     </li>
                     <li><a href="https://github.com/chenset" target="_blank"><i class="fa fa-github"></i> GitHub</a>
                     </li>

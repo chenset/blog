@@ -1,22 +1,58 @@
 @media (min-width: 768px) {
-    .article-wrap img {
+    .article-wrap img, .index-article-card img {
         max-width: 668px !important;
         height: auto !important;
     }
 }
 
 @media (min-width: 992px) {
-    .article-wrap img {
+    .article-wrap img .index-article-card img {
         max-width: 892px !important;
         height: auto !important;
     }
 }
 
 @media (min-width: 1200px) {
-    .article-wrap img {
+    .article-wrap img .index-article-card img {
         max-width: 1100px !important;
         height: auto !important;
     }
+}
+
+.color-white-1 {
+    color: #fff;
+}
+
+.color-gray-1 {
+    color: #ababab;
+}
+
+.color-green-1 {
+    color: #3DD394;
+}
+
+.bg-green-1 {
+    background-color: #3DD394;
+}
+
+.bg-gary-1 {
+    background-color: #F4F2ED;
+}
+
+.bg-gary-2 {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.bg-yellow-1 {
+    background-color: #FFBD2E;
+}
+
+.bg-red-1 {
+    background-color: #FF5F57;
+}
+
+.circle {
+    border-radius: 50%;
 }
 
 .index-navbar, .index-footer-navbar {
@@ -30,17 +66,59 @@
 }
 
 .index-navbar .navbar-right li a {
-    font-weight: 800;
+    /*font-weight: 800;*/
 }
 
 .index-navbar .navbar-right li a.active {
     color: #3DD394;
 }
 
-.color-white-1 {
-    color: #fff;
+.index-head-background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 450px;
+    background: #F4F2ED;
+    z-index: -1;
 }
 
-.bg-green-1 {
-    background: #3DD394;
+.index-editor-card {
+    margin-top: 50px;
+    background: #FBFBFB;
+    height: 500px;
+    border: 1px solid #EEE;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    border-radius: 2px;
+}
+
+.index-editor-card .top {
+    width: 100%;
+    height: 33px;
+    line-height: 33px;
+    background: #fff;
+    border-bottom: 1px solid #EEE;
+    text-align: center;
+}
+
+.index-editor-card .top .circle {
+    margin: 11px 6px 0 0;
+    float: left;
+    display: block;
+    width: 10px;
+    height: 10px;
+}
+
+.index-editor-card .top .circle:first-child {
+    margin-left: 12px;
+}
+
+.index-article-card {
+    margin-top: 200px;
+    padding-bottom: 40px;
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+}
+
+.index-article-card .type {
+    line-height: 70px;
 }
