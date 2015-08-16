@@ -8,6 +8,7 @@
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/layout.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('/css/codemirror.css')}}" rel="stylesheet" type="text/css"/>
     @section('layoutCss')
         {{-- 按需载入css, 这个section会被每个子视图重写 --}}
     @show
@@ -120,6 +121,9 @@
     </div>
 </div>
 <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/js/codemirror.js')}}"></script>
+<script src="{{asset('/js/codemirror-active-line.js')}}"></script>
+<script src="{{asset('/js/codemirror-javascript.js')}}"></script>
 @section('js')
     {{-- 按需载入js, 这个section会被每个子视图重写 --}}
 @show

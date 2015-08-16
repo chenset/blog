@@ -1,9 +1,24 @@
 @extends('layout')
 
 @section('main')
-    <div class="index-head-background">
+    <div class="index-head-background" id="wave">
     </div>
     <div class="container-fluid">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="jumbotron">
+                            <h3 style="font-size: 42px;">I love coding</h3>
+                            <br/>
+
+                            <p style="color:#8b8a88">All i need is time, write coding, run code. change myself !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="container">
                 <div class="row">
@@ -14,14 +29,42 @@
                                 <i class="circle bg-yellow-1"></i>
                                 <i class="circle bg-green-1"></i>
 
-                                <small class="color-gray-1">~/run.py</small>
+                                <small class="color-gray-1 title">~/console.js</small>
+                            </div>
+                            <div class="editor-wrap">
+                                <label for="editor" class="sr-only"></label>
+                                <textarea id="editor" class="sr-only">
+$(function () {
+    var codeMirror = CodeMirror.fromTextArea(document.getElementById("editor"), {
+        lineNumbers: true,
+        lineWrapping: true,
+        readOnly: false,
+        autofocus: true
+    });
+
+    codeMirror.setSize('100%', '100%');
+});
+                                </textarea>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            $(function () {
+                var codeMirror = CodeMirror.fromTextArea(document.getElementById("editor"), {
+                    lineNumbers: true,
+                    lineWrapping: true,
+                    readOnly: false,
+                    styleActiveLine: true,
+                    mode:"javascript",
+                    autofocus: true
+                });
 
+                codeMirror.setSize('100%', '100%');
+            });
+        </script>
 
         <div class="container">
             @foreach($articles as $article)
@@ -46,6 +89,13 @@
                     </div>
                 </section>
             @endforeach
+        </div>
+
+
+        <div class="wave">
+            <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none; fill:red;"></path>
+            </svg>
         </div>
 
 @stop
