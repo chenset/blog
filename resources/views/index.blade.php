@@ -34,11 +34,17 @@
                             <div class="editor-wrap">
                                 <label for="editor" class="sr-only"></label>
                                 <textarea id="editor" class="sr-only">
-$(function () {
+require([
+    "lib/codemirror",
+    "codemirror/mode/codemirror-active-line",
+    "codemirror/mode/codemirror-javascript"
+], function (CodeMirror) {
     var codeMirror = CodeMirror.fromTextArea(document.getElementById("editor"), {
         lineNumbers: true,
         lineWrapping: true,
         readOnly: false,
+        styleActiveLine: true,
+        mode: "javascript",
         autofocus: true
     });
 
@@ -51,8 +57,14 @@ $(function () {
                 </div>
             </div>
         </div>
+
         <script>
-            $(function () {
+            require([
+                "lib/codemirror",
+                "codemirror/mode/codemirror-active-line",
+                "codemirror/mode/codemirror-javascript"
+            ], function (CodeMirror) {
+
                 var codeMirror = CodeMirror.fromTextArea(document.getElementById("editor"), {
                     lineNumbers: true,
                     lineWrapping: true,
@@ -61,43 +73,8 @@ $(function () {
                     mode: "javascript",
                     autofocus: true
                 });
-
                 codeMirror.setSize('100%', '100%');
             });
-            //            requirejs(['app/codeMirror'], function (codeMirror) {
-            //                codeMirror();
-            //            });
-
-
-            //            require([
-            //                'codemirror'
-            //            ], function (CodeMirror) {
-            //
-            //                var codeMirror = CodeMirror.fromTextArea(document.getElementById("editor"), {
-            //                    lineNumbers: true,
-            //                    lineWrapping: true,
-            //                    readOnly: false,
-            //                    styleActiveLine: true,
-            //                    mode: "javascript",
-            //                    autofocus: true
-            //                });
-            //                codeMirror.setSize('100%', '100%');
-            //
-            //                require('codemirror-active-line', function (active) {
-            //
-            //                });
-            //                require('codemirror-javascript');
-
-
-            //
-            //
-            //
-            //                CodeMirror.fromTextArea(document.getElementById("code"), {
-            //                    lineNumbers: true,
-            //                    mode: "htmlmixed"
-            //                });
-            //            })            ;
-
         </script>
 
         <div class="container">

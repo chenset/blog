@@ -18,22 +18,16 @@
     <script src="{{asset('/js/html5shiv.min.js')}}"></script>
     <![endif]-->
 
-    <script src="{{asset('/js/jquery.min.js')}}"></script>
-{{--    <script src="{{asset('/js/require.js')}}"></script>--}}
-    {{--<script>--}}
-        {{--requirejs.config({--}}
-            {{--baseUrl: 'js',--}}
-            {{--paths: {--}}
-                {{--jquery: 'jquery.min'--}}
-            {{--},--}}
-            {{--packages: [{--}}
-                {{--name: "codemirror",--}}
-                {{--location: "/js",--}}
-                {{--main: "codemirror"--}}
-            {{--}]--}}
-        {{--});--}}
-    {{--</script>--}}
-    {{--<script src="{{asset('/js/jquery.min.js')}}"></script>--}}
+    {{--    <script src="{{asset('/js/jquery.min.js')}}"></script>--}}
+    <script src="{{asset('/js/require.js')}}"></script>
+    <script>
+        requirejs.config({
+            baseUrl: 'js',
+            paths: {
+                jquery: 'jquery.min'
+            }
+        });
+    </script>
 
     <style type="text/css">
         {{--footer置底--}}
@@ -138,10 +132,10 @@
 </div>
 
 
-<script src="{{asset('/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('/js/codemirror.js')}}"></script>
-<script src="{{asset('/js/codemirror-active-line.js')}}"></script>
-<script src="{{asset('/js/codemirror-javascript.js')}}"></script>
+{{--<script src="{{asset('/js/bootstrap.min.js')}}"></script>--}}
+{{--<script src="{{asset('/js/codemirror.js')}}"></script>--}}
+{{--<script src="{{asset('/js/codemirror-active-line.js')}}"></script>--}}
+{{--<script src="{{asset('/js/codemirror-javascript.js')}}"></script>--}}
 @section('js')
     {{-- 按需载入js, 这个section会被每个子视图重写 --}}
 @show
