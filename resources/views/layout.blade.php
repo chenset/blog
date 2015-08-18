@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>
+    {{--    <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>--}}
     <link href="{{asset('/css/layout.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/codemirror.css')}}" rel="stylesheet" type="text/css"/>
     @section('layoutCss')
@@ -28,36 +28,6 @@
             }
         });
     </script>
-
-    <style type="text/css">
-        {{--footer置底--}}
-        html,
-        body {
-            height: 100%;
-        }
-
-        #wrap {
-            min-height: 100%;
-            height: auto !important;
-            height: 100%;
-            margin: 0 auto -150px;
-        }
-
-        #footer-buff,
-        #footer {
-            height: 150px;
-        }
-
-        @media (max-width: 767px) {
-            #footer {
-                margin-left: -20px;
-                margin-right: -20px;
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-        }
-    </style>
-
 </head>
 <body>
 
@@ -99,13 +69,12 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="{{nav_active('index')?' active ':''}}" href="{{route('index')}}">HOME</a></li>
                     <li><a class="{{nav_active('code.index')?' active ':''}}"
-                                href="{{route('code.index')}}">CODE</a>
+                                href="{{route('code.index')}}">编码</a>
                     </li>
-                    <li><a class="{{nav_active('note.index')?' active ':''}}"
-                                href="{{route('note.index')}}">NOTE</a>
-                    </li>
+                    {{--<li><a class="{{nav_active('note.index')?' active ':''}}"--}}
+                    {{--href="{{route('note.index')}}">笔记</a>--}}
+                    {{--</li>--}}
                     <li><a href="https://github.com/chenset" target="_blank"><i class="fa fa-github"></i> GitHub</a>
                     </li>
                 </ul>
@@ -124,18 +93,13 @@
         <nav class="navbar navbar-default index-footer-navbar">
             <div class="container">
                 <ul class="nav navbar-nav navbar-right pull-right">
-                    <li><a href="{{route('admin.index')}}"><i class="fa fa-slack"></i> Admin</a></li>
+                    <li><a href="{{route('admin.index')}}"><i class="fa fa-slack"></i> # Admin</a></li>
                 </ul>
             </div>
         </nav>
     </div>
 </div>
 
-
-{{--<script src="{{asset('/js/bootstrap.min.js')}}"></script>--}}
-{{--<script src="{{asset('/js/codemirror.js')}}"></script>--}}
-{{--<script src="{{asset('/js/codemirror-active-line.js')}}"></script>--}}
-{{--<script src="{{asset('/js/codemirror-javascript.js')}}"></script>--}}
 @section('js')
     {{-- 按需载入js, 这个section会被每个子视图重写 --}}
 @show
