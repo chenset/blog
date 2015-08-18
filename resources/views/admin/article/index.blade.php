@@ -79,7 +79,7 @@
                                                 class="btn btn-xs btn-default"><i class="fa fa-fw fa-pencil"
                                                     title="编辑"></i></a>
 
-                                        <a href="{{route(strtolower(config('blog.article_type')[$item['type']]).'.show',$item['id'])}}"
+                                        <a href="{{route('topic.show',$item['id'])}}"
                                                 class="btn btn-xs btn-default"><i class="fa fa-fw fa-link"
                                                     title="预览"></i></a>
                                     </td>

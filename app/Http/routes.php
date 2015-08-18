@@ -4,11 +4,9 @@ Route::get('/', ['as' => 'index', 'uses' => 'IndexController@getIndex']);
 Route::get('article/image/{datePath}/{fileName}', ['as' => 'article.image.upload.get', 'uses' => 'ArticleController@getImage']);//article image
 Route::resource('article', 'ArticleController', ['only' => ['show']]);//article
 
-Route::get('code', ['as' => 'code.index', 'uses' => 'ArticleController@getCodeIndex']);
-Route::get('note', ['as' => 'note.index', 'uses' => 'ArticleController@getNoteIndex']);
+Route::get('topic', ['as' => 'topic.index', 'uses' => 'ArticleController@getTopicIndex']);
 
-Route::get('code/{id}', ['as' => 'code.show', 'uses' => 'ArticleController@getCode']);
-Route::get('note/{id}', ['as' => 'note.show', 'uses' => 'ArticleController@getNote']);
+Route::get('topic/{id}', ['as' => 'topic.show', 'uses' => 'ArticleController@show']);
 
 //login to access
 Route::group(['middleware' => ['auth']], function () {

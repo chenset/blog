@@ -34,16 +34,14 @@ class ArticleController extends Controller
         return $this->show($id);
     }
 
-    public function getCodeIndex()
+    public function getTopicIndex()
     {
-        $articles = $this->articleM->select(['id', 'title', 'type'])->where(['type' => 1])->orderBy('id', 'desc')->get();
+        $articles = $this->articleM->select(['id', 'title', 'type'])->orderBy('id', 'desc')->get();
         return view('article/index', compact('articles'));
     }
 
     public function getNoteIndex()
     {
-        $articles = $this->articleM->select(['id', 'title', 'type'])->where(['type' => 2])->orderBy('id', 'desc')->get();
-        return view('article/index', compact('articles'));
     }
 
     public function getNotice()

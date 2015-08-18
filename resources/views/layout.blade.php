@@ -69,8 +69,8 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="{{nav_active('code.index')?' active ':''}}"
-                                href="{{route('code.index')}}">编码</a>
+                    <li><a class="{{nav_active('topic.index')?' active ':''}}"
+                                href="{{route('topic.index')}}">编码</a>
                     </li>
                     {{--<li><a class="{{nav_active('note.index')?' active ':''}}"--}}
                     {{--href="{{route('note.index')}}">笔记</a>--}}

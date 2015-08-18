@@ -7,7 +7,7 @@
                     @foreach($articles as $article)
                         <li>
                             <h2>
-                                <a href="{{route(strtolower(config('blog.article_type')[$article['type']]).'.show',$article['id'])}}">{{$article['title']}}</a>
+                                <a href="{{route('topic.show',$article['id'])}}">{{$article['title']}}</a>
                             </h2>
                         </li>
                     @endforeach
