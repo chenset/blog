@@ -28,7 +28,6 @@
                                 <i class="circle bg-red-1"></i>
                                 <i class="circle bg-yellow-1"></i>
                                 <i class="circle bg-green-1"></i>
-
                                 <small class="color-gray-1 title">~/console.js</small>
                             </div>
                             <div class="editor-wrap">
