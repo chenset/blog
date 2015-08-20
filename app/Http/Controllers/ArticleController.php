@@ -36,7 +36,7 @@ class ArticleController extends Controller
 
     public function getTopicIndex()
     {
-        $articles = $this->articleM->select(['id', 'title', 'type'])->orderBy('id', 'desc')->get();
+        $articles = $this->articleM->select(['id', 'title', 'type'])->where('display', 1)->orderBy('id', 'desc')->get();
         return view('article/index', compact('articles'));
     }
 
