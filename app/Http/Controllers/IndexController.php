@@ -6,7 +6,7 @@ class IndexController extends Controller
 {
     public function getIndex(Article $articleM)
     {
-        $articles = $articleM->limit(1)->orderBy('id', 'desc')->get();
+        $articles = $articleM->where('display', 1)->limit(1)->orderBy('id', 'desc')->get();
         return view('index', compact('articles'));
     }
 }
