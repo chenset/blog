@@ -13,9 +13,5 @@ CKEDITOR.editorConfig = function (config) {
 
     config.extraPlugins = 'clipboard,widget,dialog,codesnippet,uploadimage,codemirror';
 
-    config.codemirror = {
-        tabSize: 4
-    };
-
     config.contentsCss = ['/css/bootstrap.min.css', '/css/layout.css', '/css/ckeditor-custom.css'];
 };

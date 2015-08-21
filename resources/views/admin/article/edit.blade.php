@@ -1,7 +1,6 @@
 @extends('admin.layout')
 
 @section('css')
-    <link href="{{asset('/css/codemirror.css')}}" rel="stylesheet" type="text/css"/>
 @overwrite
 
 @section('main')
