@@ -48,9 +48,16 @@ class ArticleController extends Controller
         $token = $auth->uploadToken(env('QINIU_REPO_NAME'));
         list($ret, $error) = $upManager->put($token, $datePath . '/' . $newName, file_get_contents((string)$file), null, $file->getMimeType());
 
-        return response('<script>
+//        {"fileName":"1349073944685.jpg","uploaded":1,"url":"\/userfiles\/files\/1349073944685.jpg"}
+
+
+        if (isset($this->request['CKEditorFuncNum'])) {
+            return response('<script>
                 window.parent.CKEDITOR.tools.callFunction(' . $this->request['CKEditorFuncNum'] . ',"' . env('QINNIU_RESOURCE_ROOT_URL') . '/' . $datePath . '/' . $newName . '","");
                 </script>');
+        } else {
+            return ['fileName' => $newName, 'uploaded' => 1, 'url' => env('QINNIU_RESOURCE_ROOT_URL') . '/' . $datePath . '/' . $newName];
+        }
     }
 
     public function index()
