@@ -17,5 +17,5 @@ CKEDITOR.editorConfig = function (config) {
         tabSize: 4
     };
 
-    config.contentsCss = '/css/bootstrap.min.css';
+    config.contentsCss = ['/css/bootstrap.min.css', '/css/layout.css', '/css/ckeditor-custom.css'];
 };

@@ -19,6 +19,18 @@
     }
 }
 
+pre {
+    border-color: #eaeaea;
+    border-radius: 2px !important;
+    /*background: #F8F8F8;*/
+    /*padding: 0;*/
+}
+
+code {
+    padding: 0 !important;
+    background: none !important;
+}
+
 li {
     list-style: none;
 }

@@ -9,22 +9,23 @@
     {{--    <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>--}}
     <link href="{{asset('/css/layout.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/codemirror.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('/css/highlight/github.css')}}" rel="stylesheet" type="text/css"/>
     @section('layoutCss')
         {{-- 按需载入css, 这个section会被每个子视图重写 --}}
     @show
-
      <!--[if lt IE 9]>
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <script src="{{asset('/js/html5shiv.min.js')}}"></script>
     <![endif]-->
 
-    {{--    <script src="{{asset('/js/jquery.min.js')}}"></script>--}}
+    {{--<script src="{{asset('/js/jquery.min.js')}}"></script>--}}
     <script src="{{asset('/js/require.js')}}"></script>
     <script>
         requirejs.config({
-            baseUrl: 'js',
+            baseUrl: '/js',
             paths: {
-                jquery: 'jquery.min'
+                jquery: 'jquery.min',
+                highlight: 'highlight.pack'
             }
         });
     </script>
@@ -72,9 +73,6 @@
                     <li><a class="{{nav_active('topic.index')?' active ':''}}"
                                 href="{{route('topic.index')}}">编码</a>
                     </li>
-                    {{--<li><a class="{{nav_active('note.index')?' active ':''}}"--}}
-                    {{--href="{{route('note.index')}}">笔记</a>--}}
-                    {{--</li>--}}
                     <li><a href="https://github.com/chenset" target="_blank"><i class="fa fa-github"></i> GitHub</a>
                     </li>
                 </ul>
@@ -103,5 +101,15 @@
 @section('js')
     {{-- 按需载入js, 这个section会被每个子视图重写 --}}
 @show
+<script>
+    require(['highlight', 'jquery'], function () {
+        var els = document.getElementsByTagName('code'), i;
+        for (i in els) {
+            if (els[i].tagName) {
+                hljs.highlightBlock(els[i]);
+            }
+        }
+    });
+</script>
 </body>
 </html>

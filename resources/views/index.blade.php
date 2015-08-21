@@ -60,8 +60,8 @@ require([
         <script>
             require([
                 "lib/codemirror",
-                "codemirror/mode/codemirror-active-line",
-                "codemirror/mode/codemirror-javascript"
+                "codemirror/mode/active-line",
+                "codemirror/javascript/javascript"
             ], function (CodeMirror) {
 
                 var codeMirror = CodeMirror.fromTextArea(document.getElementById("editor"), {
@@ -69,7 +69,7 @@ require([
                     lineWrapping: true,
                     readOnly: false,
                     styleActiveLine: true,
-                    mode: "javascript",
+                    mode: 'javascript',
                     autofocus: true
                 });
                 codeMirror.setSize('100%', '100%');
@@ -96,4 +96,5 @@ require([
                 </section>
             @endforeach
         </div>
+    </div>
 @stop
