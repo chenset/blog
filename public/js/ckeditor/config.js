@@ -8,8 +8,14 @@ CKEDITOR.editorConfig = function (config) {
     // config.language = 'fr';
     // config.uiColor = '#AADC6E';
     config.image_previewText = ' ';
-    config.filebrowserImageUploadUrl = "/admin/article/image/upload";
-    //config.filebrowserBrowseUrl = "/admin/article/image/upload";
-
+    config.filebrowserImageUploadUrl = "/admin/article/image/upload?";
     config.height = 900;
+
+    config.extraPlugins = 'clipboard,widget,dialog,codesnippet,uploadimage,codemirror';
+
+    config.codemirror = {
+        tabSize: 4
+    };
+
+    config.contentsCss = '/css/bootstrap.min.css';
 };
