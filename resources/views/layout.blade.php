@@ -102,11 +102,14 @@
     {{-- 按需载入js, 这个section会被每个子视图重写 --}}
 @show
 <script>
-    require(['highlight', 'jquery'], function () {
-        var els = document.getElementsByTagName('code'), i;
+    require(['highlight'], function () {
+        var els = document.getElementsByTagName('pre'), i;
         for (i in els) {
             if (els[i].tagName) {
-                hljs.highlightBlock(els[i]);
+                var e = els[i].getElementsByTagName('code')[0];
+                if (e && e.tagName) {
+                    hljs.highlightBlock(e);
+                }
             }
         }
     });
