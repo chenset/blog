@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>Fly Say - Chen的博客</title>
+    <title>Fly Say</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
@@ -18,7 +18,6 @@
     <script src="{{asset('/js/html5shiv.min.js')}}"></script>
     <![endif]-->
 
-    {{--<script src="{{asset('/js/jquery.min.js')}}"></script>--}}
     <script src="{{asset('/js/require.js')}}"></script>
     <script>
         requirejs.config({
