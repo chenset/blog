@@ -78,13 +78,13 @@ require([
 
         <div class="container">
             @foreach($articles as $article)
-                <section class="index-article-card">
+                <article class="index-article-card">
                     <div class="row">
-                        <div class="col-md-11">
+                        <header class="col-md-12">
                             <h2>
                                 <a href="{{route('topic.show',$article['id'])}}">{{$article['title']}}</a>
                             </h2>
-                        </div>
+                        </header>
                     </div>
                     <br/>
 
@@ -93,7 +93,7 @@ require([
                             {!! $article['content'] !!}
                         </div>
                     </div>
-                </section>
+                </article>
             @endforeach
         </div>
     </div>
