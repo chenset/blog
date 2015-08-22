@@ -19,6 +19,16 @@
     }
 }
 
+body {
+    line-height: 1.8em;
+    letter-spacing: 0.005em;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 pre {
     border: none;
     border-radius: 2px !important;
@@ -41,6 +51,10 @@ a {
 
 a:hover {
     color: #333;
+}
+
+.navbar-white {
+    border-bottom: 1px solid #f2f2f2;
 }
 
 .color-white-1 {
@@ -162,27 +176,23 @@ a:hover {
     line-height: 70px;
 }
 
-.article-list {
-    margin-top: 150px;
+.article-wrap {
+    margin-top: 60px;
+    background: #FFF;
 }
 
-.article-list h2 {
-    display: inline;
-    font-size: 16px;
+.article-wrap header ul {
+    color: #777;
+    margin-bottom: 6px;
 }
 
-.article-list a {
-    color: #666;
+.article-wrap article {
+    padding: 20px 0 40px;
+    border-bottom: 1px solid #f2f2f2;
 }
 
-.article-list li {
-    display: block;
-    border-radius: 3px;
-    padding: 12px 20px;
-}
-
-.article-list li:nth-child(odd) {
-    background: #F4F2ED;
+.article-wrap article p {
+    color: #000;
 }
 
 /*--footer置底--*/

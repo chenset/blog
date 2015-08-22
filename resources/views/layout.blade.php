@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('/css/bootstrap.custom.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/layout.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/codemirror.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/highlight/github.css')}}" rel="stylesheet" type="text/css"/>
@@ -34,16 +34,6 @@
     <nav class="navbar navbar-default index-navbar">
         <div class="container">
             <div class="navbar-header">
-                <button type="button"
-                        class="navbar-toggle collapsed"
-                        data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1"
-                        aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="{{route('index')}}">Fly Say</a>
             </div>
 
