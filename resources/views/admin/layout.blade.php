@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>博客后台管理</title>
+    <title>后台</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
     <!--[if lt IE 9]>
     <script src="{{asset('/js/respond.min.js')}}"></script>

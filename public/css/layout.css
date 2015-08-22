@@ -35,6 +35,14 @@ li {
     list-style: none;
 }
 
+a {
+    color: #3DD394;
+}
+
+a:hover {
+    color: #333;
+}
+
 .color-white-1 {
     color: #fff;
 }

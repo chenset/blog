@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    {{--    <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css"/>--}}
     <link href="{{asset('/css/layout.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/codemirror.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/highlight/github.css')}}" rel="stylesheet" type="text/css"/>
     @section('layoutCss')
         {{-- 按需载入css, 这个section会被每个子视图重写 --}}
     @show
-     <!--[if lt IE 9]>
+
+    <!--[if lt IE 9]>
     <script src="{{asset('/js/respond.min.js')}}"></script>
     <script src="{{asset('/js/html5shiv.min.js')}}"></script>
     <![endif]-->
@@ -30,27 +30,7 @@
     </script>
 </head>
 <body>
-
 <div id="wrap">
-    <!--[if IE 8]>
-    <div class="alert alert-warning text-center" style="margin-bottom:0;">
-        <p>你的浏览器不支持一些新特性，请升级你的浏览器或安装<a href="http://browsehappy.com/"> Chrome </a>。
-        </p>
-
-        <p>2015年了，IE8老了...</p>
-    </div>
-    <![endif]-->
-
-    <!--[if lt IE 8]>
-    <div class="alert alert-danger text-center" style="margin-bottom:0;">
-        <p>你的浏览器不支持一些新特性，请升级你的浏览器或安装<a href="http://browsehappy.com/"> Chrome </a>。
-        </p>
-
-        <p>2015年了，IE7及以下都老了...</p>
-    </div>
-    <![endif]-->
-
-
     <nav class="navbar navbar-default index-navbar">
         <div class="container">
             <div class="navbar-header">
