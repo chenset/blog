@@ -20,7 +20,7 @@
 }
 
 pre {
-    border-color: #eaeaea;
+    border: none;
     border-radius: 2px !important;
     /*background: #F8F8F8;*/
     /*padding: 0;*/
