@@ -2,7 +2,7 @@
 
 Route::group(['domain' => 'flysay.com'], function () {
     Route::get('{all}', function () {
-        return Redirect::away('http://www.flysay.com' . ltrim(\Illuminate\Support\Facades\Request::path(), '/'), 301); // Change to 302 in case of temporarily
+        return Redirect::away('http://www.flysay.com/' . ltrim(Request::path(), '/'), 301); // Change to 302 in case of temporarily
     })->where('all', '.*');
 });
 
