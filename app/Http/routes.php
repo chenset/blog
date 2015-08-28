@@ -1,5 +1,11 @@
 <?php
 
+Route::group(['domain' => 'flysay.com'], function () {
+    Route::get('{all}', function () {
+        return Redirect::away('http://www.flysay.com' . ltrim(\Illuminate\Support\Facades\Request::path(), '/'), 301); // Change to 302 in case of temporarily
+    })->where('all', '.*');
+});
+
 Route::get('/', ['as' => 'index', 'uses' => 'IndexController@getIndex']);
 Route::get('article/image/{datePath}/{fileName}', ['as' => 'article.image.upload.get', 'uses' => 'ArticleController@getImage']);//article image
 Route::resource('article', 'ArticleController', ['only' => ['show']]);//article
