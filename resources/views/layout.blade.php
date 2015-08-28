@@ -61,6 +61,7 @@
             <div class="container">
                 <ul class="nav navbar-nav navbar-right pull-right">
                     <li><a href="{{route('admin.index')}}"><i class="fa fa-slack"></i> # Admin</a></li>
+                    <li><a target="_blank" href="http://www.miitbeian.gov.cn/"><i class="fa fa-slack"></i> 粤ICP备15076729号-1</a></li>
                 </ul>
             </div>
         </nav>
