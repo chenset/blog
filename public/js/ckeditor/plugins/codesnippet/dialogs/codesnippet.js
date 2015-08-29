@@ -63,22 +63,6 @@
                             label: lang.codeContents,
                             setup: function (widget) {
                                 this.setValue(widget.data.code);
-
-                                //
-                                //console.log($('.cke_dialog_ui_input_textarea textarea')[0]);
-                                //
-                                //setTimeout(function () {
-                                //    var codeMirror = CodeMirror.fromTextArea($('.cke_dialog_ui_input_textarea textarea')[0], {
-                                //        lineNumbers: true,
-                                //        lineWrapping: true,
-                                //        readOnly: false,
-                                //        styleActiveLine: true,
-                                //        mode: "javascript",
-                                //        autofocus: true
-                                //    });
-                                //    //codeMirror.setSize('200px', '300px');
-                                //}, 1000);
-
                             },
                             commit: function (widget) {
                                 widget.setData('code', this.getValue());
