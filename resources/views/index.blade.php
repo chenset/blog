@@ -81,9 +81,9 @@ require([
                 <article class="index-article-card">
                     <div class="row">
                         <header class="col-md-12">
-                            <h2>
+                            <h3>
                                 <a href="{{route('topic.show',$article['id'])}}">{{$article['title']}}</a>
-                            </h2>
+                            </h3>
                         </header>
                     </div>
                     <br/>
