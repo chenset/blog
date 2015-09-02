@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title')
-    {{$article['title']}} - 
+    {{$article['title']}} -
 @overwrite
 @section('main')
     <article class="container article-wrap">

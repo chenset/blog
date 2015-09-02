@@ -49,7 +49,9 @@
                     <li><a class="{{nav_active('topic.index')?' active ':''}}"
                                 href="{{route('topic.index')}}">编码</a>
                     </li>
-                    <li><a href="https://github.com/chenset" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                    <li><a href="https://github.com/chenset"
+                                target="_blank"
+                                rel="external nofollow"><i class="fa fa-github"></i> GitHub</a>
                     </li>
                 </ul>
             </div>
