@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="bookmark" href="/favicon.ico"/>
     <link href="{{asset('/css/bootstrap.custom.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/layout.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/css/codemirror.css')}}" rel="stylesheet" type="text/css"/>
