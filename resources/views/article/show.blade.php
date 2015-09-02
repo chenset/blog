@@ -1,5 +1,7 @@
 @extends('layout')
-@section('title'){{$article['title']}}@overwrite
+@section('title')
+    {{$article['title']}} - 
+@overwrite
 @section('main')
     <article class="container article-wrap">
         <header><h3 class="text-center">{{$article['title']}}</h3></header>
